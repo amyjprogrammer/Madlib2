@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Madlib2", "Madlib2\Madlib2.csproj", "{EDF6DB71-A039-42EB-A984-EE6C232D31E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDF6DB71-A039-42EB-A984-EE6C232D31E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF6DB71-A039-42EB-A984-EE6C232D31E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF6DB71-A039-42EB-A984-EE6C232D31E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF6DB71-A039-42EB-A984-EE6C232D31E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F175E75-F1F5-4434-903B-C571FA5E63A9}
+	EndGlobalSection
+EndGlobal
