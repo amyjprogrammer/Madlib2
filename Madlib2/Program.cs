@@ -52,6 +52,9 @@ namespace Madlib2
                 }
             }
 
+            LuckyNum();
+            SecretCrush();
+            
         }
 
         static void GreetingUser()
@@ -60,6 +63,7 @@ namespace Madlib2
             ColorMessage(ConsoleColor.DarkCyan, "Please enter your name: ");
             string playerName = Console.ReadLine();
             Console.WriteLine("I would have guessed {0} for you.", playerName);
+            MadLib(playerName);
         }
 
         static void ColorMessage(ConsoleColor color, string message)
@@ -67,6 +71,32 @@ namespace Madlib2
             Console.ForegroundColor = color;
             Console.Write(message);
             Console.ResetColor();
+        }
+
+        static void LuckyNum()
+        {
+            Random random = new Random();
+            int luckyGuess = random.Next(101);
+            Console.WriteLine("Your lucky number today is {0}.", luckyGuess);
+  
+        }
+
+        static void SecretCrush()
+        {
+            ColorMessage(ConsoleColor.DarkMagenta, "What is the first name for your secret male crush: ");
+            string crush = Console.ReadLine();
+            if (crush.ToUpper() == "CHRIS")
+            {
+                Console.WriteLine("I know right.  Chris Hemsworth, Chris Pratt, Chris Evans, Chris Pine...etc.");
+            } else
+            {
+                Console.WriteLine("I really thought you would say Chris.  I guess I am having an off day.");
+            }
+        }
+
+        static void MadLib(string playerName)
+        {
+            Console.WriteLine("This MadLib is for {0}", playerName);
         }
     }
 }
