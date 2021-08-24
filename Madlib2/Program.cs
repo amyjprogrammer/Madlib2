@@ -6,45 +6,39 @@ namespace Madlib2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Madame Sonia's MadLib and Guessing Game");
-            Console.Write("Please tell me your name: ");
-            string playerName = Console.ReadLine();
-            Console.WriteLine("I would have guessed {0} for you.", playerName);
+            //adding a new method and breaking up the code
+            GreetingUser();
 
-            while (true)
+            int selectedNum = 0; //starts the while loop
+            ColorMessage(ConsoleColor.Yellow, "Please choose 1, 2 or 3: ");
+
+            while (selectedNum != 1 && selectedNum != 2 && selectedNum != 3)
             {
-                int selectedNum = 0; //starting with a wrong number so it can start in the while loop
-                Console.Write("Please choose either 1, 2 or 3: ");
+                //get players input
+                string input = Console.ReadLine();
 
-
-                while (selectedNum != 1 || selectedNum != 2 || selectedNum != 3)
+                if (!int.TryParse(input, out selectedNum))
                 {
-                    //get players input
-                    string input = Console.ReadLine();
+                    //checking to make sure the user put a number
+                    //also using the ColorMessage method
+                    ColorMessage(ConsoleColor.Red, "Please enter a number: ");
 
-                    if (!int.TryParse(input, out selectedNum))
-                    {
-                        //checking to make sure the user put a number
-                        //also using the ColorMessage method
-                        ColorMessage(ConsoleColor.Red, "Please enter a number: ");
-
-                        //Keep going;
-                        continue;
-                    }
-
-                    //taking the players string answer and converting to int
-                    selectedNum = Int32.Parse(input);
-
-                    if (selectedNum != 1)
-                    {
-                        //using Color function again
-                        ColorMessage(ConsoleColor.DarkBlue, "Enter either 1, 2 or 3: ");
-                    }
+                    //Keep going;
+                    continue;
                 }
 
-                int selectedNumber = Convert.ToInt32(Console.ReadLine());
+                //taking the players string answer and converting to int
+                selectedNum = Int32.Parse(input);
 
-                switch (selectedNumber)
+                //Looking for 1, 2 or 3
+                if ((selectedNum != 1) && (selectedNum != 2) && (selectedNum != 3))
+                {
+                    //using Color function again
+                    ColorMessage(ConsoleColor.DarkBlue, "Enter either 1, 2 or 3: ");
+                }
+
+                //Finally got 1, 2 or 3 (show the prediction)
+                switch (selectedNum)
                 {
                     case 1:
                         Console.WriteLine("I knew you loved cats!");
@@ -60,7 +54,13 @@ namespace Madlib2
 
         }
 
-        
+        static void GreetingUser()
+        {
+            Console.WriteLine("Welcome to Madame Sonia's MadLib and Guessing Game");
+            ColorMessage(ConsoleColor.DarkCyan, "Please enter your name: ");
+            string playerName = Console.ReadLine();
+            Console.WriteLine("I would have guessed {0} for you.", playerName);
+        }
 
         static void ColorMessage(ConsoleColor color, string message)
         {
